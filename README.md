@@ -566,7 +566,6 @@ myVoiceIt.videoIdentificationByUrl({
 ```
 ## Authors
 
-Stephen Akers, stephen@voiceit.io
 Armaan Bindra, armaan@voiceit.io
 
 ## License

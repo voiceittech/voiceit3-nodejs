@@ -61,7 +61,7 @@ npm install --save voiceit2-nodejs
 Make Sure to add this at the top of your project file
 
 ```javascript
-voiceit2 = require('voiceit2-nodejs');
+let voiceit2 = require('voiceit2-nodejs');
 ```
 
 First assign the API Credentials an initialize a VoiceIt2 struct.
@@ -77,7 +77,7 @@ let myVoiceIt = new voiceit2("API_KEY", "API_TOKEN");
 Get all  users associated with the apiKey
 ```javascript
 myVoiceIt.getAllUsers((jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -130,7 +130,7 @@ myVoiceIt.deleteUser({
 Get all the groups associated with the apiKey
 ```javascript
 myVoiceIt.getAllGroups((jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -214,7 +214,7 @@ Gets all enrollment for user with given userId(begins with 'usr_')
 myVoiceIt.getAllEnrollmentsForUser({
   userId: "USER_ID_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -226,7 +226,7 @@ Gets face enrollments for user with given userId(begins with 'usr_')
 myVoiceIt.getFaceEnrollmentsForUser({
   userId: "USER_ID_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -238,7 +238,7 @@ Delete all enrollments for user with the given userId(begins with 'usr_')
 myVoiceIt.deleteAllEnrollmentsForUser({
   userId: "USER_ID_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -251,7 +251,7 @@ myVoiceIt.deleteEnrollmentForUser({
   userId: "USER_ID_HERE",
   enrollmentId : "ENROLLMENT_ID_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -264,7 +264,7 @@ myVoiceIt.deleteFaceEnrollment({
   userId: "USER_ID_HERE",
   faceEnrollmentId : "FACE_ENROLLMENT_ID_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -278,7 +278,7 @@ myVoiceIt.createVoiceEnrollment({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFilePath : "FULL_AUDIO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -292,7 +292,7 @@ myVoiceIt.createVoiceEnrollmentByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFileURL : "PUBLIC_URL_TO_AUDIO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -306,7 +306,7 @@ myVoiceIt.createVideoEnrollment({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -319,7 +319,7 @@ myVoiceIt.createVideoEnrollment({
   videoFilePath : "FULL_VIDEO_PATH",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -333,7 +333,7 @@ myVoiceIt.createVideoEnrollmentByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -346,7 +346,7 @@ myVoiceIt.createVideoEnrollmentByUrl({
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -359,7 +359,7 @@ myVoiceIt.createFaceEnrollment({
   userId: "USER_ID_HERE",
   videoFilePath : "FULL_VIDEO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -371,7 +371,7 @@ myVoiceIt.createFaceEnrollment({
   videoFilePath : "FULL_VIDEO_PATH",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -387,7 +387,7 @@ myVoiceIt.voiceVerification({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFilePath : "FULL_AUDIO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 #### Voice Verification by URL
@@ -400,7 +400,7 @@ myVoiceIt.voiceVerificationByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFileURL : "PUBLIC_URL_TO_AUDIO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -414,7 +414,7 @@ myVoiceIt.videoVerification({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -427,7 +427,7 @@ myVoiceIt.videoVerification({
   videoFilePath : "FULL_VIDEO_PATH",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -441,7 +441,7 @@ myVoiceIt.videoVerificationByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -454,7 +454,7 @@ myVoiceIt.videoVerificationByUrl({
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -467,7 +467,7 @@ myVoiceIt.faceVerification({
   userId: "USER_ID_HERE",
   videoFilePath : "FULL_VIDEO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -479,7 +479,7 @@ myVoiceIt.faceVerification({
   videoFilePath : "FULL_VIDEO_PATH",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 ### Identification API Calls
@@ -494,7 +494,7 @@ myVoiceIt.voiceIdentification({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFilePath : "FULL_AUDIO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 #### Voice Identification by URL
@@ -507,7 +507,7 @@ myVoiceIt.voiceIdentificationByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   audioFileURL : "PUBLIC_URL_TO_AUDIO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -521,7 +521,7 @@ myVoiceIt.videoIdentification({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -534,7 +534,7 @@ myVoiceIt.videoIdentification({
   videoFilePath : "FULL_VIDEO_PATH",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 #### Video Identification by URL
@@ -547,7 +547,7 @@ myVoiceIt.videoIdentificationByUrl({
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE"
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 
@@ -560,7 +560,7 @@ myVoiceIt.videoIdentificationByUrl({
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
   doBlinkDetection: false
 },(jsonResponse)=>{
-  console.log(jsonResponse, status);
+  console.log(jsonResponse);
 });
 ```
 ## Authors

@@ -45,7 +45,7 @@ module.exports = function(apk, tok){
       });
     };
 
-    this.getGroupsForUser = (options.callback) =>{
+    this.getGroupsForUser = (options, callback) =>{
       unirest.get(`${BASE_URL}/users/${options.userId}/groups`)
       .auth(this.authHeader)
       .end(function (httpResponse) {

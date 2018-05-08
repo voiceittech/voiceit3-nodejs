@@ -1,4 +1,6 @@
 # VoiceIt's API 2.0 Node Wrapper
+[![npm version](https://badge.fury.io/js/voiceit2-nodejs.svg)](https://badge.fury.io/js/voiceit2-nodejs)
+
 A NodeJS wrapper for VoiceIt's API2.0 featuring Face + Voice Verification and Identification.
 
 * [Getting Started](#getting-started)

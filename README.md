@@ -300,7 +300,7 @@ myVoiceIt.createVoiceEnrollmentByUrl({
 
 #### Create Video Enrollment
 
-Create video enrollment for user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording need to be no less than 1.2 seconds and no more than 5 seconds
+Create video enrollment for user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording need to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.createVideoEnrollment({
@@ -312,14 +312,14 @@ myVoiceIt.createVideoEnrollment({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.createVideoEnrollment({
   userId: "USER_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -327,7 +327,7 @@ myVoiceIt.createVideoEnrollment({
 
 #### Create Video Enrollment by URL
 
-Create video enrollment for user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording need to be no less than 1.2 seconds and no more than 5 seconds
+Create video enrollment for user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording need to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.createVideoEnrollmentByUrl({
@@ -339,14 +339,14 @@ myVoiceIt.createVideoEnrollmentByUrl({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.createVideoEnrollmentByUrl({
   userId: "USER_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -354,7 +354,7 @@ myVoiceIt.createVideoEnrollmentByUrl({
 
 #### Create Face Enrollment
 
-Create face enrollment for user with given userId(begins with 'usr_') and optionally a boolean to disable blink detection. Note: It is recommended that you send a 2 second mp4 video
+Create face enrollment for user with given userId(begins with 'usr_') and optionally a boolean to enable blink detection. Note: It is recommended that you send a 2 second mp4 video
 
 ```javascript
 myVoiceIt.createFaceEnrollment({
@@ -365,13 +365,13 @@ myVoiceIt.createFaceEnrollment({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.createFaceEnrollment({
   userId: "USER_ID_HERE",
   videoFilePath : "FULL_VIDEO_PATH",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -408,7 +408,7 @@ myVoiceIt.voiceVerificationByUrl({
 
 #### Video Verification
 
-Verify user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
+Verify user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.videoVerification({
@@ -420,14 +420,14 @@ myVoiceIt.videoVerification({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enable
 
 ```javascript
 myVoiceIt.videoVerification({
   userId: "USER_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -435,7 +435,7 @@ myVoiceIt.videoVerification({
 
 #### Video Verification by URL
 
-Verify user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
+Verify user with given userId(begins with 'usr_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.videoVerificationByUrl({
@@ -447,14 +447,14 @@ myVoiceIt.videoVerificationByUrl({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enable
 
 ```javascript
 myVoiceIt.videoVerificationByUrl({
   userId: "USER_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -462,7 +462,7 @@ myVoiceIt.videoVerificationByUrl({
 
 #### Face Verification
 
-Verify user's face with given userId(begins with 'usr_') and optionally a boolean to disable blink detection. Note: Provide an about 2 seconds long video(mp4 codec is recommended) of the user's face
+Verify user's face with given userId(begins with 'usr_') and optionally a boolean to enable blink detection. Note: Provide an about 2 seconds long video(mp4 codec is recommended) of the user's face
 
 ```javascript
 myVoiceIt.faceVerification({
@@ -473,13 +473,13 @@ myVoiceIt.faceVerification({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.faceVerification({
   userId: "USER_ID_HERE",
   videoFilePath : "FULL_VIDEO_PATH",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
@@ -515,7 +515,7 @@ myVoiceIt.voiceIdentificationByUrl({
 
 #### Video Identification
 
-Identify user inside group with the given groupId(begins with 'grp_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
+Identify user inside group with the given groupId(begins with 'grp_'), contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.videoIdentification({
@@ -527,21 +527,21 @@ myVoiceIt.videoIdentification({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.videoIdentification({
   groupId: "GROUP_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFilePath : "FULL_VIDEO_PATH",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });
 ```
 #### Video Identification by URL
 
-Identify user inside group with the given groupId(begins with 'grp_') , contentLanguage('en-US','es-ES', etc.) and optionally a boolean to disable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
+Identify user inside group with the given groupId(begins with 'grp_') , contentLanguage('en-US','es-ES', etc.) and optionally a boolean to enable blink detection. Note: File recording needs to be no less than 1.2 seconds and no more than 5 seconds
 
 ```javascript
 myVoiceIt.videoIdentificationByUrl({
@@ -553,14 +553,14 @@ myVoiceIt.videoIdentificationByUrl({
 });
 ```
 
-or with blinkDetection disabled
+or with blinkDetection enabled
 
 ```javascript
 myVoiceIt.videoIdentificationByUrl({
   groupId: "GROUP_ID_HERE",
   contentLanguage : "CONTENT_LANGUAGE_HERE",
   videoFileURL : "PUBLIC_URL_TO_VIDEO_FILE_HERE",
-  doBlinkDetection: false
+  doBlinkDetection: true
 },(jsonResponse)=>{
   console.log(jsonResponse);
 });

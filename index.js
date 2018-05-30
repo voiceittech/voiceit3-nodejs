@@ -161,7 +161,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -173,7 +173,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -185,7 +185,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .field('fileUrl', options.videoFileURL)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -244,7 +244,7 @@ module.exports = function(apk, tok){
       unirest.post(`${BASE_URL}/verification/face`)
       .auth(this.authHeader)
       .field('userId', options.userId)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -256,7 +256,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -268,7 +268,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .field('fileUrl', options.videoFileURL)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -304,7 +304,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -316,7 +316,7 @@ module.exports = function(apk, tok){
       .auth(this.authHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
-      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : true )
+      .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .field('fileUrl', options.videoFileURL)
       .end(function (httpResponse) {
         callback(httpResponse.body);

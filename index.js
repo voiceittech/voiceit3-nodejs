@@ -160,7 +160,6 @@ module.exports = function(apk, tok){
       unirest.post(`${BASE_URL}/enrollments/face`)
       .auth(this.authHeader)
       .field('userId', options.userId)
-      .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
       .end(function (httpResponse) {

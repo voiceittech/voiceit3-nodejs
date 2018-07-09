@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/voiceittech/voiceit2-nodejs#readme",
   "dependencies": {
+    "npm": "^6.1.0",
     "unirest": "^0.5.1"
   }
 }

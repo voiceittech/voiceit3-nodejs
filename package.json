@@ -1,6 +1,6 @@
 {
   "name": "voiceit2-nodejs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "VoiceIt's API 2.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
   "scripts": {

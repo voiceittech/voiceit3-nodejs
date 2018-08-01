@@ -10,12 +10,14 @@ module.exports = function(apk, tok){
       pass : tok,
       sendImmediately: true
     };
+    this.platformHeader = {'platformId': '31'};
 
     /* User API Calls */
 
     this.getAllUsers = (callback) =>{
       unirest.get(`${BASE_URL}/users`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -24,6 +26,7 @@ module.exports = function(apk, tok){
     this.createUser = (callback) => {
       unirest.post(`${BASE_URL}/users`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -32,6 +35,7 @@ module.exports = function(apk, tok){
     this.checkUserExists = (options, callback) => {
       unirest.get(`${BASE_URL}/users/${options.userId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -40,6 +44,7 @@ module.exports = function(apk, tok){
     this.deleteUser = (options, callback) => {
       unirest.delete(`${BASE_URL}/users/${options.userId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -48,6 +53,7 @@ module.exports = function(apk, tok){
     this.getGroupsForUser = (options, callback) =>{
       unirest.get(`${BASE_URL}/users/${options.userId}/groups`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -58,6 +64,7 @@ module.exports = function(apk, tok){
     this.getAllGroups = (callback) =>{
       unirest.get(`${BASE_URL}/groups`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -66,6 +73,7 @@ module.exports = function(apk, tok){
     this.getGroup = (options, callback) =>{
       unirest.get(`${BASE_URL}/groups/${options.groupId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -74,6 +82,7 @@ module.exports = function(apk, tok){
     this.checkGroupExists = (options, callback) =>{
       unirest.get(`${BASE_URL}/groups/${options.groupId}/exists`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -82,6 +91,7 @@ module.exports = function(apk, tok){
     this.createGroup = (options = {}, callback) => {
       unirest.post(`${BASE_URL}/groups`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field("description", (options.description != null) ? options.description : "")
       .end(function (httpResponse) {
         callback(httpResponse.body);
@@ -91,6 +101,7 @@ module.exports = function(apk, tok){
     this.addUserToGroup = (options = {}, callback) => {
       unirest.put(`${BASE_URL}/groups/addUser`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field("userId", options.userId)
       .field("groupId", options.groupId)
       .end(function (httpResponse) {
@@ -101,6 +112,7 @@ module.exports = function(apk, tok){
     this.removeUserFromGroup = (options = {}, callback) => {
       unirest.put(`${BASE_URL}/groups/removeUser`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field("userId", options.userId)
       .field("groupId", options.groupId)
       .end(function (httpResponse) {
@@ -111,6 +123,7 @@ module.exports = function(apk, tok){
     this.deleteGroup = (options, callback) => {
       unirest.delete(`${BASE_URL}/groups/${options.groupId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -121,6 +134,7 @@ module.exports = function(apk, tok){
     this.getAllEnrollmentsForUser = (options, callback) => {
       unirest.get(`${BASE_URL}/enrollments/${options.userId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -129,6 +143,7 @@ module.exports = function(apk, tok){
     this.getFaceEnrollmentsForUser = (options, callback) => {
       unirest.get(`${BASE_URL}/enrollments/face/${options.userId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -137,6 +152,7 @@ module.exports = function(apk, tok){
     this.createVoiceEnrollment = (options, callback) => {
       unirest.post(`${BASE_URL}/enrollments`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .attach('recording', options.audioFilePath)
@@ -148,6 +164,7 @@ module.exports = function(apk, tok){
     this.createVoiceEnrollmentByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/enrollments/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('fileUrl', options.audioFileURL)
@@ -159,6 +176,7 @@ module.exports = function(apk, tok){
     this.createFaceEnrollment = (options, callback) => {
       unirest.post(`${BASE_URL}/enrollments/face`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
@@ -170,6 +188,7 @@ module.exports = function(apk, tok){
     this.createVideoEnrollment = (options, callback) => {
       unirest.post(`${BASE_URL}/enrollments/video`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
@@ -182,6 +201,7 @@ module.exports = function(apk, tok){
     this.createVideoEnrollmentByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/enrollments/video/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
@@ -194,6 +214,7 @@ module.exports = function(apk, tok){
     this.deleteFaceEnrollment = (options, callback) => {
       unirest.delete(`${BASE_URL}/enrollments/face/${options.userId}/${options.faceEnrollmentId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -202,6 +223,7 @@ module.exports = function(apk, tok){
     this.deleteEnrollmentForUser = (options, callback) => {
       unirest.delete(`${BASE_URL}/enrollments/${options.userId}/${options.enrollmentId}`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -210,6 +232,7 @@ module.exports = function(apk, tok){
     this.deleteAllEnrollmentsForUser = (options, callback) => {
       unirest.delete(`${BASE_URL}/enrollments/${options.userId}/all`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .end(function (httpResponse) {
         callback(httpResponse.body);
       });
@@ -220,6 +243,7 @@ module.exports = function(apk, tok){
     this.voiceVerification = (options, callback) => {
       unirest.post(`${BASE_URL}/verification`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .attach('recording', options.audioFilePath)
@@ -231,6 +255,7 @@ module.exports = function(apk, tok){
     this.voiceVerificationByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/verification/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('fileUrl', options.audioFileURL)
@@ -242,6 +267,7 @@ module.exports = function(apk, tok){
     this.faceVerification = (options, callback) => {
       unirest.post(`${BASE_URL}/verification/face`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
       .attach('video', options.videoFilePath)
@@ -253,6 +279,7 @@ module.exports = function(apk, tok){
     this.videoVerification = (options, callback) => {
       unirest.post(`${BASE_URL}/verification/video`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
@@ -265,6 +292,7 @@ module.exports = function(apk, tok){
     this.videoVerificationByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/verification/video/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('userId', options.userId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
@@ -279,6 +307,7 @@ module.exports = function(apk, tok){
     this.voiceIdentification = (options, callback) => {
       unirest.post(`${BASE_URL}/identification`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
       .attach('recording', options.audioFilePath)
@@ -290,6 +319,7 @@ module.exports = function(apk, tok){
     this.voiceIdentificationByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/identification/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
       .field('fileUrl', options.audioFileURL)
@@ -301,6 +331,7 @@ module.exports = function(apk, tok){
     this.videoIdentification = (options, callback) => {
       unirest.post(`${BASE_URL}/identification/video`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )
@@ -313,6 +344,7 @@ module.exports = function(apk, tok){
     this.videoIdentificationByUrl = (options, callback) => {
       unirest.post(`${BASE_URL}/identification/video/byUrl`)
       .auth(this.authHeader)
+      .headers(this.platformHeader)
       .field('groupId', options.groupId === 'NONE' ? null : options.groupId)
       .field('contentLanguage', options.contentLanguage)
       .field('doBlinkDetection', (options.doBlinkDetection != null ) ? options.doBlinkDetection : false )

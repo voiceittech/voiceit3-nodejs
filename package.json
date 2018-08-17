@@ -4,7 +4,8 @@
   "description": "VoiceIt's API 2.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && mocha",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,13 @@
   },
   "homepage": "https://github.com/voiceittech/voiceit2-nodejs#readme",
   "dependencies": {
-    "npm": "^6.1.0",
+    "mocha": "^5.2.0",
+    "npm": "^6.2.0",
     "unirest": "^0.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
   }
 }

@@ -4,7 +4,7 @@ node_js:
 - '8'
 - '6'
 before_script:
-- ./before-test
+- "./before-test"
 - npm i
 script: npm test
 notifications:
@@ -14,12 +14,11 @@ notifications:
     on_success: never
     on_failure: never
 before_deploy:
-- ./upload.sh
+- "./upload.sh"
 deploy:
   provider: npm
   email: armaan@voiceit.io
   api_key:
-    secure: d3s8S0cepb1w6BG3QekO1IAOhQr69cp4VxfXjfTj+BEhrqJEWKTUtWBtQrzs01UbvEq+P+b0WpVFHOdlmItGnLZ0qSh+PgmABPGeZnoRfb55RPjxzgNrYVhjgua97A7/UXIUnxJH45fbCqLpp0wAdcJ6vhSixINWVCVgzZjXc4Xf/3Q0cOyorCTsXsLBXNXuCN4gi4ukawZmgfGKhQEKVOvdbCmJ1nseKjk5d1lHRhLXDD7BdTzKOsMwj9O69+neTNt+IpyfJFtk16mkppoYnNGpqPxmrfgvkCCvXtXY9BPazMZdLBC6KJGPF5ZAPghZOM1Qi9S9l1A41Od1YCxV80dspZqSPwHd6PnaWU4KjQLA0d5ROKbWHWusMWle5Q2szVLsdmS6zs2nkKC0jUeUmxfbrDVME9KN7cbZQk43mtmXxOU/W8PuwkFKyvt1Vizdz0I5swHSGE3mzyTC4+c4H6uRZ0xzc7Jtc/2b/RKuUlAoOjaX5zum6AeLjL/jB8cOlXcYCkNiihBA2pnS86XgX0a1MAv+Uf+SFbdctgsmtN+Jpz7Y8Fs5aDBzI+mmcjJpqUL9Cw2TnfvDGd2EpKlZdzEzOQJ1vmkP/kDB/bvCVMaWBR8ejXcF+Gz/XFNug9L/cvfQiBZ9k2ebTpZVhkH/o2bsKhfFeSAciWEpDRKnl2o=
+    secure: Kadq49lnbjEmJWIwWj9QloOL7h7DalnJiCJv0ea3KEAO1lzCVZ02JRZiD54P187EdtYRoYq+2CbVhEUaly5h5zHVbWvqLG1FPfKFCBlFZl2VWv5vQdIFm/QiO5oN6zTfw4f0AbXq9+VEaqB7jd/8Ss+HD3v9y3qRgGzjZiJGHXmYihlTqRvIiX/6n0tbvoDKp+ZACpg86dPFXR22y275tVINcd337DtSFXvmjd8eDO9mR8Fvd1CJjUCnSVYe48mgBWqCe/jTuEpNwVxlhY1vgUFh3u949BIB4NSBvthWFLrNDtzGdiClwvi9rkGCEwg9yIV1g20q3vcsuLzbcuVFjvP/fYcGzx0UyO4gA4BoQEJiGY7IW5PVNcJgzzNJL1OJAX3imemn0PC548/BENXiYEyxb/WZ1FqD7yUlEnY6KbyJiqlFAsnkKW9OtUecKneK1rBh8+G7/QGlyiUFcm7VG24SFwCEZiYuSDwBnTyGlDoeTN+dPuFeb07aE/YT7QH6QrtyAbLTcRAHJk22Sbo55Q4Z5LF3K42kD/BqSWQEod02g0NKV7fJqp0LoRvFRMM/8YO66FdIXO9DvdoorflEN9r45UJwC8flPp2GgrbbKEVE1RewCMdiMTe3e8xf11+KkyOT4/ch4LzyqmAWH5aBNFY9EHTGMNZBgVWJB73P7DE=
   on:
-    branch: master
-    node: '8'
+    repo: voiceittech/voiceit2-nodejs

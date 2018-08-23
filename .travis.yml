@@ -13,8 +13,6 @@ notifications:
   email:
     on_success: never
     on_failure: never
-before_deploy:
-- "./upload.sh"
 deploy:
   provider: npm
   email: armaan@voiceit.io

@@ -20,9 +20,12 @@ deploy:
   email: armaan@voiceit.io
   api_key:
     secure: Kadq49lnbjEmJWIwWj9QloOL7h7DalnJiCJv0ea3KEAO1lzCVZ02JRZiD54P187EdtYRoYq+2CbVhEUaly5h5zHVbWvqLG1FPfKFCBlFZl2VWv5vQdIFm/QiO5oN6zTfw4f0AbXq9+VEaqB7jd/8Ss+HD3v9y3qRgGzjZiJGHXmYihlTqRvIiX/6n0tbvoDKp+ZACpg86dPFXR22y275tVINcd337DtSFXvmjd8eDO9mR8Fvd1CJjUCnSVYe48mgBWqCe/jTuEpNwVxlhY1vgUFh3u949BIB4NSBvthWFLrNDtzGdiClwvi9rkGCEwg9yIV1g20q3vcsuLzbcuVFjvP/fYcGzx0UyO4gA4BoQEJiGY7IW5PVNcJgzzNJL1OJAX3imemn0PC548/BENXiYEyxb/WZ1FqD7yUlEnY6KbyJiqlFAsnkKW9OtUecKneK1rBh8+G7/QGlyiUFcm7VG24SFwCEZiYuSDwBnTyGlDoeTN+dPuFeb07aE/YT7QH6QrtyAbLTcRAHJk22Sbo55Q4Z5LF3K42kD/BqSWQEod02g0NKV7fJqp0LoRvFRMM/8YO66FdIXO9DvdoorflEN9r45UJwC8flPp2GgrbbKEVE1RewCMdiMTe3e8xf11+KkyOT4/ch4LzyqmAWH5aBNFY9EHTGMNZBgVWJB73P7DE=
+  on:
+    branch: master
+    condition: $DO_DEPLOY = YES
 after_deploy:
-- git config --global user.email "armaan@voiceit.io"
-- git config --global user.name "Armaan Bindra"
+- git config --global user.email "andrew@voiceit.io"
+- git config --global user.name "voiceitbot" 
 - git add package.json
 - git commit -m "Updated Version"
 - git push https://${GH_TOKEN}@github.com/voiceittech/voiceit2-nodejs.git master

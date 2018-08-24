@@ -33,7 +33,11 @@ then
   REPLACE_VERSION='s/'$oldversion'/'$version'/g'
   sed -i $REPLACE_VERSION package.json
   cat package.json | awk 'NR==3'
+  export DO_DEPLOY=YES
+  echo "DO_DEPLOY=YES" >> ~/.profile
 else
-    echo "Doing nothing"
-    exit 1
+    export DO_DEPLOY=NO
+    echo "DO_DEPLOY=NO" >> ~/.profile
+    echo "Tests passed but did not deploy"
+    exit 0
 fi

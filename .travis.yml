@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- '8'
+  - '8'
 before_script:
-- "./before-test"
-- npm i
+  - "./before-test"
+  - npm i
 script:
-# - npm test
-- echo "Success"
+  # - npm test
+  - echo "Success"
 notifications:
   slack:
     secure: rk/dzRcu62bvJcyXodbqFhoamjoZc96nxxiFj1hQhd7Z3ZXvVedata4/dR2Tg+WzwPz3YrB3YEGMr7oh0kJinYGYYl2hoPH3cuET+xORecFNcj3Li20oEFZCt1X3azJcnusTc0s/KOcoBSwo3rgX1b8QwahdDnTTuVkzXKhf93y2MQIbi7wvzdz0488elttWXqpUaKKQdjJ0VqOha1EPshzJyYqoMonmESnGA64v9eCXUWMuwAp390zOxY8/pQtCkX7Y9ovO3A2pgROUvxPT//071df+b9D1dz3rytoUQIoDmTkUY4Zn9d+RTFpiG18nf0O2pW4T375dcBlN2v0gi3zhd1odFLt1Q269mbRVJH8PChFAzwok7OhSS5kf6JdC0riNHLn7qDVkM1vNUv21P64d6jtEVO7TmxOeZD2c8M4IPJ7AhtB/3Uq1cFPk5ZTcaOEYbpnCCEKOv1KtJPS1NC+qY4vKX6IjnyXRP0Qidlz9poFa0j3tgRFbMPI8xgrd3KWwHgFc8xVfdQoymf/Dy7P5mY2+r3rt0hKrBR4bPcN8S6O5QocbtyBiA9Kcmiv6wDP62PEEsuQTlWG3d2+7TfOVdHYppeFN/h7pWbMyK2nDNMHXh4c64lQVsYWDatjYtD3T4txAESzZ3OVP83IV+ZxiomtMbLRAS8apM2wKVyE=
@@ -14,11 +14,11 @@ notifications:
     on_success: never
     on_failure: never
 after_success:
-- "./upload.sh"
+  - "./upload.sh"
 before_deploy:
-- echo $DO_DEPLOY
-- source ~/.profile
-- echo $DO_DEPLOY
+  - echo $DO_DEPLOY
+  - source ~/.profile
+  - echo $DO_DEPLOY
 deploy:
   skip_cleanup: true
   provider: npm
@@ -29,8 +29,8 @@ deploy:
     branch: master
     condition: $DO_DEPLOY = YES
 after_deploy:
-- git config --global user.email "andrew@voiceit.io"
-- git config --global user.name "voiceitbot"
-- git add package.json
-- git commit -m "Updated Version"
-- git push https://${GH_TOKEN}@github.com/voiceittech/voiceit2-nodejs.git master
+  - git config --global user.email "andrew@voiceit.io"
+  - git config --global user.name "voiceitbot"
+  - git add package.json
+  - git commit -m "Updated Version"
+  - git push https://${GH_TOKEN}@github.com/voiceittech/voiceit2-nodejs.git master

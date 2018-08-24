@@ -4,6 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/voiceit2-nodejs.svg)](https://badge.fury.io/js/voiceit2-nodejs)
 ![travis](https://travis-ci.org/voiceittech/voiceit2-perl.svg?branch=master)
+
 A NodeJS wrapper for VoiceIt's API 2.0 featuring Voice + Face Verification and Identification.
 
 ## Getting Started

@@ -3,6 +3,7 @@ const TestConfig = {
   CONTENT_LANGUAGE_FAKE : 'asdasd',
   FAKE_USER_ID: 'usr_asdsadsadsa',
   FAKE_GROUP_ID: 'grp_asdsadsadsa',
+  INVALID_FILE_PATH: 'invalidFileFound',
   S3_FILES_URL:'https://s3.amazonaws.com/voiceit-api2-testing-files/',
   ENROLLMENT_FILE_FACE_AND_VOICE: 'test-data/enrollmentArmaanMyFaceAndVoice.m4a',
   ENROLLMENT_FILE_ARMAAN_1 : 'test-data/enrollmentArmaan1.wav',

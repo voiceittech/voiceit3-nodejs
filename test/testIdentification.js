@@ -219,7 +219,6 @@ describe('Testing Identification Calls', function(){
               videoFilePath : testCase.videoFilePath,
               contentLanguage : testCase.contentLanguage,
               phrase: testCase.phrase ? testCase.phrase : '',
-              doBlinkDetection : testCase.doBlinkDetection ? testCase.doBlinkDetection : false
             },
             (jsonResponse) => {
               utilities.printIfError(testCase.expectedRc, jsonResponse);
@@ -252,7 +251,6 @@ describe('Testing Identification Calls', function(){
               videoFileURL : testCase.videoFileURL,
               contentLanguage : testCase.contentLanguage,
               phrase: testCase.phrase ? testCase.phrase : '',
-              doBlinkDetection : testCase.doBlinkDetection ? testCase.doBlinkDetection : false
             },
             (jsonResponse) => {
               utilities.printIfError(testCase.expectedRc, jsonResponse);
@@ -283,7 +281,6 @@ describe('Testing Identification Calls', function(){
               {
                 groupId : testCase.groupId ? testCase.groupId : identification.currentGroupIds[0],
                 videoFilePath : testCase.videoFilePath,
-                doBlinkDetection : testCase.doBlinkDetection ? testCase.doBlinkDetection : false
               },
               (jsonResponse) => {
                 utilities.printIfError(testCase.expectedRc, jsonResponse);
@@ -311,7 +308,6 @@ describe('Testing Identification Calls', function(){
               {
                 groupId : testCase.groupId ? testCase.groupId : identification.currentGroupIds[0],
                 videoFileURL : testCase.videoFileURL,
-                doBlinkDetection : testCase.doBlinkDetection ? testCase.doBlinkDetection : false
               },
               (jsonResponse) => {
                 utilities.printIfError(testCase.expectedRc, jsonResponse);

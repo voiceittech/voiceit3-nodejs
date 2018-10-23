@@ -49,7 +49,6 @@ const verification = {
     myVoiceIt.createVideoEnrollment({
       userId: verification.currentUserIds[1],
       contentLanguage: cl ? cl : config.CONTENT_LANGUAGE_REAL,
-      doBlinkDetection: true,
       videoFilePath: filePath
     }, (jsonResponse) => {
       if (jsonResponse.responseCode == responseCode.SUCCESS) {
@@ -196,7 +195,6 @@ describe('Testing All Verification API Calls', function() {
             ? testCase.userId
             : verification.currentUserIds[0],
           videoFilePath: testCase.videoFilePath,
-          doBlinkDetection: false,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
           utilities.printIfError(testCase.expectedRc, jsonResponse);
@@ -222,7 +220,6 @@ describe('Testing All Verification API Calls', function() {
             ? testCase.userId
             : verification.currentUserIds[0],
           videoFileURL: testCase.videoFileURL,
-          doBlinkDetection: false,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
           utilities.printIfError(testCase.expectedRc, jsonResponse);

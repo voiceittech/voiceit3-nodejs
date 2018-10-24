@@ -200,7 +200,6 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId,
               videoFilePath : testCase.videoFilePath,
-              doBlinkDetection : false
             },(jsonResponse) => {
               utilities.printIfError(testCase.expectedRc, jsonResponse);
               if(jsonResponse.responseCode == responseCode.SUCCESS){
@@ -243,7 +242,6 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId,
               videoFileURL : testCase.videoFileURL,
-              doBlinkDetection : false
             },(jsonResponse) => {
               utilities.printIfError(testCase.expectedRc, jsonResponse);
               if(jsonResponse.responseCode == responseCode.SUCCESS){

@@ -74,3 +74,4 @@ typings/
 
 test.js
 package-lock.json
+test-data/*

@@ -2,10 +2,10 @@
 mkdir test-data
 cd test-data
 wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaanMyFaceAndVoice.m4a
-wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan1.wav
-wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan2.wav
-wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentArmaan3.wav
-wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationArmaan1.wav
+wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel1.wav
+wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel2.wav
+wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentNoel3.wav
+wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationNoel1.wav
 wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen1.wav
 wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen2.wav
 wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentStephen3.wav

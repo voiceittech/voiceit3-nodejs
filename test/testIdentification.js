@@ -75,9 +75,9 @@ const identification  = {
                           groupId : identification.currentGroupIds[0]
                         },(jsonResponse)=>{
                           if(jsonResponse.responseCode == responseCode.SUCCESS){
-                            identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_ARMAAN_1,()=>{
-                                identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_ARMAAN_2,()=>{
-                                    identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_ARMAAN_3,()=>{
+                            identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_NOEL_1,()=>{
+                                identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_NOEL_2,()=>{
+                                    identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_NOEL_3,()=>{
                                                 identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_STEPHEN_1,()=>{
                                                     identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_STEPHEN_2,()=>{
                                                         identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_STEPHEN_3,()=>{

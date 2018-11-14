@@ -6,7 +6,7 @@ const createVoiceEnrollmentTestCases = [
   expectedRc: responseCode.SUCCESS,
   expectedSc: 201,
   contentLanguage: config.CONTENT_LANGUAGE_REAL,
-  audioFilePath: config.ENROLLMENT_FILE_ARMAAN_1,
+  audioFilePath: config.ENROLLMENT_FILE_NOEL_1,
   expectedText: config.ENGLISH_PHRASE,
   phrase: config.ENGLISH_PHRASE,
   expectedMessage:'Successfully enrolled voice for user with userId : usr_([a-z0-9]){32}'

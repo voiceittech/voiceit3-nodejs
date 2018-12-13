@@ -33,11 +33,15 @@ describe('Testing All Phrase API Calls', function(){
             {
               contentLanguage : testCase.contentLanguage
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });

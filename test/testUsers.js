@@ -48,11 +48,15 @@ describe('Testing All User API Calls', function(){
           this.timeout(MAX_TIMEOUT);
           let itThis = this;
           myVoiceIt.getAllUsers((jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -67,11 +71,15 @@ describe('Testing All User API Calls', function(){
             if(jsonResponse.responseCode == responseCode.SUCCESS){
                 users.currentUserIds.push(jsonResponse.userId);
             }
-            utilities.printIfError(testCase.expectedRc, jsonResponse);
-            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-            assert.equal(jsonResponse.status, testCase.expectedSc);
-            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-            done();
+            try {
+              utilities.printIfError(testCase.expectedRc, jsonResponse);
+              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+              assert.equal(jsonResponse.status, testCase.expectedSc);
+              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+              done();
+            } catch(e) {
+              return done(e);
+            }
           });
         });
       });
@@ -87,12 +95,16 @@ describe('Testing All User API Calls', function(){
               userId : testCase.userId ? testCase.userId : users.currentUserIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.exists, testCase.expectedExists);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.exists, testCase.expectedExists);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -108,12 +120,16 @@ describe('Testing All User API Calls', function(){
               userId: testCase.userId ? testCase.userId : users.currentUserIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.userToken, testCase.userToken));
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.userToken, testCase.userToken));
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -129,11 +145,15 @@ describe('Testing All User API Calls', function(){
               userId : testCase.userId ? testCase.userId : users.currentUserIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });

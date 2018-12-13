@@ -63,11 +63,15 @@ describe('Testing All Groups API Calls', function(){
           this.timeout(MAX_TIMEOUT);
           let itThis = this;
           myVoiceIt.getAllGroups((jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -83,12 +87,16 @@ describe('Testing All Groups API Calls', function(){
               groupId : testCase.groupId ? testCase.groupId : groups.currentGroupIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(testCase.expectedExists, jsonResponse.exists);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(testCase.expectedExists, jsonResponse.exists);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -100,11 +108,15 @@ describe('Testing All Groups API Calls', function(){
           this.timeout(MAX_TIMEOUT);
           let itThis = this;
           myVoiceIt.getAllGroups((jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -121,11 +133,15 @@ describe('Testing All Groups API Calls', function(){
               groupId : testCase.groupId ? testCase.groupId : groups.currentGroupIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -142,11 +158,15 @@ describe('Testing All Groups API Calls', function(){
               groupId : testCase.groupId ? testCase.groupId : groups.currentGroupIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -162,11 +182,15 @@ describe('Testing All Groups API Calls', function(){
               groupId : testCase.groupId ? testCase.groupId : groups.currentGroupIds[0],
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });

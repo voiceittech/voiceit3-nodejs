@@ -157,20 +157,24 @@ describe('Testing Identification Calls', function(){
               phrase: testCase.phrase ? testCase.phrase : ''
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              if(jsonResponse.responseCode == responseCode.SUCCESS){
-                assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                if(jsonResponse.responseCode == responseCode.SUCCESS){
+                  assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+                }
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                if(testCase.user == "Armaan"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                }
+                if(testCase.user == "Stephen"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                }
+                done();
+              } catch(e) {
+                return done(e);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              if(testCase.user == "Armaan"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-              }
-              if(testCase.user == "Stephen"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-              }
-              done();
             });
         });
       });
@@ -189,20 +193,24 @@ describe('Testing Identification Calls', function(){
               phrase: testCase.phrase ? testCase.phrase : ''
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              if(jsonResponse.responseCode == responseCode.SUCCESS){
-                assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                if(jsonResponse.responseCode == responseCode.SUCCESS){
+                  assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+                }
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                if(testCase.user == "Armaan"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                }
+                if(testCase.user == "Stephen"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                }
+                done();
+              } catch(e) {
+                return done(e);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              if(testCase.user == "Armaan"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-              }
-              if(testCase.user == "Stephen"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-              }
-              done();
             });
         });
       });
@@ -221,20 +229,24 @@ describe('Testing Identification Calls', function(){
               phrase: testCase.phrase ? testCase.phrase : '',
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              if(jsonResponse.responseCode == responseCode.SUCCESS){
-                assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                if(jsonResponse.responseCode == responseCode.SUCCESS){
+                  assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+                }
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                if(testCase.user == "Armaan"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                }
+                if(testCase.user == "Stephen"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                }
+                done();
+              } catch(e) {
+                return done(e);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              if(testCase.user == "Armaan"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-              }
-              if(testCase.user == "Stephen"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-              }
-              done();
             });
         });
       });
@@ -253,20 +265,24 @@ describe('Testing Identification Calls', function(){
               phrase: testCase.phrase ? testCase.phrase : '',
             },
             (jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              if(jsonResponse.responseCode == responseCode.SUCCESS){
-                assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                if(jsonResponse.responseCode == responseCode.SUCCESS){
+                  assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+                }
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                if(testCase.user == "Armaan"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                }
+                if(testCase.user == "Stephen"){
+                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                }
+                done();
+              } catch(e) {
+                return done(e);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              if(testCase.user == "Armaan"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-              }
-              if(testCase.user == "Stephen"){
-                assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-              }
-              done();
             });
         });
       });
@@ -283,17 +299,21 @@ describe('Testing Identification Calls', function(){
                 videoFilePath : testCase.videoFilePath,
               },
               (jsonResponse) => {
-                utilities.printIfError(testCase.expectedRc, jsonResponse);
-                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-                assert.equal(jsonResponse.status, testCase.expectedSc);
-                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-                if(testCase.user == "Armaan"){
-                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-                }
-                if(testCase.user == "Stephen"){
-                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-                }
-                done();
+                try {
+                  utilities.printIfError(testCase.expectedRc, jsonResponse);
+                  assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                  assert.equal(jsonResponse.status, testCase.expectedSc);
+                  assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                  if(testCase.user == "Armaan"){
+                    assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                  }
+                  if(testCase.user == "Stephen"){
+                    assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                  }
+                  done();
+              } catch(e) {
+                return done(e);
+              }
               });
           });
         });
@@ -310,17 +330,21 @@ describe('Testing Identification Calls', function(){
                 videoFileURL : testCase.videoFileURL,
               },
               (jsonResponse) => {
-                utilities.printIfError(testCase.expectedRc, jsonResponse);
-                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-                assert.equal(jsonResponse.status, testCase.expectedSc);
-                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-                if(testCase.user == "Armaan"){
-                  assert.equal(jsonResponse.userId, identification.currentUserIds[0])
-                }
-                if(testCase.user == "Stephen"){
-                  assert.equal(jsonResponse.userId, identification.currentUserIds[1])
-                }
-                done();
+                try {
+                  utilities.printIfError(testCase.expectedRc, jsonResponse);
+                  assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                  assert.equal(jsonResponse.status, testCase.expectedSc);
+                  assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                  if(testCase.user == "Armaan"){
+                    assert.equal(jsonResponse.userId, identification.currentUserIds[0])
+                  }
+                  if(testCase.user == "Stephen"){
+                    assert.equal(jsonResponse.userId, identification.currentUserIds[1])
+                  }
+                  done();
+              } catch(e) {
+                return done(e);
+              }
               });
           });
         });

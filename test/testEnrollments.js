@@ -71,11 +71,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -90,11 +94,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -109,11 +117,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -136,10 +148,14 @@ describe('Testing All Enrollment API Calls', function(){
                 enrollments.currentVoiceEnrollmentIds.push(jsonResponse.id);
                 assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -155,10 +171,14 @@ describe('Testing All Enrollment API Calls', function(){
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId,
               voiceEnrollmentId : (testCase.voiceEnrollmentId == null) ? enrollments.currentVoiceEnrollmentIds[0] : testCase.voiceEnrollmentId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -182,10 +202,14 @@ describe('Testing All Enrollment API Calls', function(){
                 enrollments.currentEnrollmentIds.push(jsonResponse.id);
                 assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -205,10 +229,14 @@ describe('Testing All Enrollment API Calls', function(){
               if(jsonResponse.responseCode == responseCode.SUCCESS){
                 enrollments.currentFaceEnrollmentIds.push(jsonResponse.faceEnrollmentId);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -224,10 +252,14 @@ describe('Testing All Enrollment API Calls', function(){
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId,
               faceEnrollmentId : (testCase.faceEnrollmentId == null) ? enrollments.currentFaceEnrollmentIds[0] : testCase.faceEnrollmentId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -247,10 +279,14 @@ describe('Testing All Enrollment API Calls', function(){
               if(jsonResponse.responseCode == responseCode.SUCCESS){
                 enrollments.currentFaceEnrollmentIds.push(jsonResponse.faceEnrollmentId);
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -273,10 +309,14 @@ describe('Testing All Enrollment API Calls', function(){
                 enrollments.currentVideoEnrollmentIds.push(jsonResponse.id);
                 assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -292,10 +332,14 @@ describe('Testing All Enrollment API Calls', function(){
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId,
               videoEnrollmentId : (testCase.videoEnrollmentId == null) ? enrollments.currentVideoEnrollmentIds[0] : testCase.videoEnrollmentId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -318,10 +362,14 @@ describe('Testing All Enrollment API Calls', function(){
                 enrollments.currentVideoEnrollmentIds.push(jsonResponse.id);
                 assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
               }
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -337,10 +385,14 @@ describe('Testing All Enrollment API Calls', function(){
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
               utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -355,11 +407,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -374,11 +430,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });
@@ -393,11 +453,15 @@ describe('Testing All Enrollment API Calls', function(){
             {
               userId : testCase.userId ? testCase.userId : enrollments.currentUserId
             },(jsonResponse) => {
-              utilities.printIfError(testCase.expectedRc, jsonResponse);
-              assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-              assert.equal(jsonResponse.status, testCase.expectedSc);
-              assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-              done();
+              try {
+                utilities.printIfError(testCase.expectedRc, jsonResponse);
+                assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+                assert.equal(jsonResponse.status, testCase.expectedSc);
+                assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
       });

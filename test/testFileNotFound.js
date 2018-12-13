@@ -24,9 +24,13 @@ describe('Testing File Not Found', function(){
               audioFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -38,9 +42,13 @@ describe('Testing File Not Found', function(){
               userId : '',
               videoFilePath : config.INVALID_FILE_PATH,
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -54,9 +62,13 @@ describe('Testing File Not Found', function(){
               videoFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
   });
@@ -72,9 +84,13 @@ describe('Testing File Not Found', function(){
               audioFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -86,9 +102,13 @@ describe('Testing File Not Found', function(){
               userId : '',
               videoFilePath : config.INVALID_FILE_PATH,
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -102,9 +122,13 @@ describe('Testing File Not Found', function(){
               videoFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
   });
@@ -120,9 +144,13 @@ describe('Testing File Not Found', function(){
               audioFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -134,9 +162,13 @@ describe('Testing File Not Found', function(){
               groupId : '',
               videoFilePath : config.INVALID_FILE_PATH,
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
 
@@ -150,9 +182,13 @@ describe('Testing File Not Found', function(){
               videoFilePath : config.INVALID_FILE_PATH,
               phrase: ''
             },(jsonResponse) => {
-              assert.ok(jsonResponse instanceof Error);
-              assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
-              done();
+              try {
+                assert.ok(jsonResponse instanceof Error);
+                assert.ok(utilities.compare(jsonResponse.message, 'File Path (\\w+) Does Not Exist'));
+                done();
+              } catch(e) {
+                return done(e);
+              }
             });
         });
   });

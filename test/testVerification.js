@@ -140,14 +140,18 @@ describe('Testing All Verification API Calls', function() {
           phrase: testCase.phrase ? testCase.phrase : '',
           audioFilePath: testCase.audioFilePath
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          if(jsonResponse.responseCode == responseCode.SUCCESS){
-            assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            if(jsonResponse.responseCode == responseCode.SUCCESS){
+              assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+            }
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
           }
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
         });
       });
     });
@@ -169,14 +173,18 @@ describe('Testing All Verification API Calls', function() {
           phrase: testCase.phrase ? testCase.phrase : '',
           audioFileURL: testCase.audioFileURL
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          if(jsonResponse.responseCode == responseCode.SUCCESS){
-            assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            if(jsonResponse.responseCode == responseCode.SUCCESS){
+              assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+            }
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
           }
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
         });
       });
     });
@@ -197,11 +205,15 @@ describe('Testing All Verification API Calls', function() {
           videoFilePath: testCase.videoFilePath,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
+          }
         });
       });
     });
@@ -222,11 +234,15 @@ describe('Testing All Verification API Calls', function() {
           videoFileURL: testCase.videoFileURL,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
+          }
         });
       });
     });
@@ -248,14 +264,18 @@ describe('Testing All Verification API Calls', function() {
           contentLanguage: testCase.contentLanguage,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          if(jsonResponse.responseCode == responseCode.SUCCESS){
-            assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            if(jsonResponse.responseCode == responseCode.SUCCESS){
+              assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+            }
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
           }
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
         });
       });
     });
@@ -277,14 +297,18 @@ describe('Testing All Verification API Calls', function() {
           contentLanguage: testCase.contentLanguage,
           phrase: testCase.phrase ? testCase.phrase : ''
         }, (jsonResponse) => {
-          utilities.printIfError(testCase.expectedRc, jsonResponse);
-          if(jsonResponse.responseCode == responseCode.SUCCESS){
-            assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+          try {
+            utilities.printIfError(testCase.expectedRc, jsonResponse);
+            if(jsonResponse.responseCode == responseCode.SUCCESS){
+              assert.equal(utilities.low(jsonResponse.text), utilities.low(testCase.expectedText));
+            }
+            assert.equal(jsonResponse.responseCode, testCase.expectedRc);
+            assert.equal(jsonResponse.status, testCase.expectedSc);
+            assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
+            done();
+          } catch(e) {
+            return done(e);
           }
-          assert.equal(jsonResponse.responseCode, testCase.expectedRc);
-          assert.equal(jsonResponse.status, testCase.expectedSc);
-          assert.ok(utilities.compare(jsonResponse.message, testCase.expectedMessage));
-          done();
         });
       });
     });

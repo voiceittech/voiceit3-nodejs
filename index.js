@@ -27,12 +27,14 @@ function VoiceIt2(apk, tok) {
   this.notificationUrl = '';
 
 
-  this.addNotificationUrl = (url) => {
-    this.notificationUrl = `?notificationURL=${querystring.escape(url)}`;
+  this.addNotificationUrl = (options, callback) => {
+    this.notificationUrl = `?notificationURL=${querystring.escape(options.url)}`;
+    callback();
   };
 
-  this.removeNotificationUrl = () => {
+  this.removeNotificationUrl = (callback) => {
     this.notificationUrl = '';
+    callback();
   };
 
   /* User API Calls */

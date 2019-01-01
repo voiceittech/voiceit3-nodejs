@@ -5,7 +5,7 @@ const faceIdentificationByUrlTestCases = [
   {
     expectedRc: responseCode.SUCCESS,
     expectedSc: 200,
-    videoFileURL: config.getURL(config.VIDEO_ENROLLMENT_FILE_ARMAAN_1),
+    videoFileURL: config.getURL(config.VIDEO_ENROLLMENT_FILE_NOEL_1),
     user: 'Armaan',
     expectedMessage:'Successfully identified face for user with userId : usr_([a-z0-9]){32} in group with groupId : grp_([a-z0-9]){32}'
   },

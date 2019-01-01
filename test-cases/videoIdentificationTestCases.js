@@ -6,7 +6,7 @@ const videoIdentificationTestCases = [
     expectedRc: responseCode.SUCCESS,
     expectedSc: 200,
     contentLanguage: config.CONTENT_LANGUAGE_REAL,
-    videoFilePath: config.VIDEO_ENROLLMENT_FILE_ARMAAN_1,
+    videoFilePath: config.VIDEO_ENROLLMENT_FILE_NOEL_1,
     expectedText: config.ENGLISH_PHRASE,
     phrase: config.ENGLISH_PHRASE,
     user: 'Armaan',

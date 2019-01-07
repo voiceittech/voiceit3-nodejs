@@ -21,7 +21,7 @@ function VoiceIt2(apk, tok) {
     },
     headers: {
       platformId: '31',
-      platformVersion: '2.2.0',
+      platformVersion: '2.2.1',
     },
   });
 

@@ -1,3 +1,4 @@
+source ~/.profile 
 git clone https://${GH_TOKEN}@github.com/voiceittech/voiceit2-nodejs.git $HOME/voiceit2nodejs-gm
 git config --global user.email "voiceitbot@voiceit.io"
 git config --global user.name "voiceitbot"

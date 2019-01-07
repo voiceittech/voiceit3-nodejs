@@ -55,13 +55,35 @@ then
 
   echo 'new version='$major'.'$minor'.'$patch
   version=$major'.'$minor'.'$patch
-  REPLACE_VERSION='s/'$oldversion'/'$version'/g'
-  sed -i $REPLACE_VERSION package.json
-  cat package.json | awk 'NR==3'
-  export DO_DEPLOY=YES
-  echo "DO_DEPLOY=YES" >> ~/.profile
-  export NEWVERSION=$version
-  echo "NEWVERSION="$version >> ~/.profile
+
+  if [[ $wrapperplatformversion = $version ]];
+  then
+    REPLACE_VERSION='s/'$oldversion'/'$version'/g'
+    sed -i $REPLACE_VERSION package.json
+    cat package.json | awk 'NR==3'
+    export DO_DEPLOY=YES
+    echo "DO_DEPLOY=YES" >> ~/.profile
+    export NEWVERSION=$version
+    echo "NEWVERSION="$version >> ~/.profile
+  else
+    export DO_DEPLOY=NO
+    echo "DO_DEPLOY=NO" >> ~/.profile
+    export NEWVERSION=$version
+    echo "NEWVERSION="$version >> ~/.profile
+    curl -X POST -H 'Content-type: application/json' --data '{
+      "icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png",
+      "username": "Release Wrapper Gate",
+        "attachments": [
+            {
+                "text": "Packaging '$reponame' version '$version' failed because the specified release version to update package management (specified by including '$releasetype' in the commit title) does not match the platform version inside the wrapper.",
+                "color": "danger"
+            }
+        ]
+    }' 'https://hooks.slack.com/services/'$SLACKPARAM1'/'$SLACKPARAM2'/'$SLACKPARAM3
+    echo "Specified release version to update package management (specified by including "$releasetype" in the commit title) does not match the platform version in wrapper source." 1>&2
+    exit 1
+  fi
+
 else
   export DO_DEPLOY=NO
   echo "DO_DEPLOY=NO" >> ~/.profile

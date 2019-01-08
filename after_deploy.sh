@@ -8,4 +8,4 @@ cd $HOME/voiceit2nodejs-gm
 git add package.json
 git commit -m "Updated Version [skip ci]"
 git push origin master
-curl -X POST -H 'Content-type: application/json' --data '{"icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png","username": "Release Wrapper Gate","attachments": [{"text": "Packaging VoiceIt2-NodeJS version '$version' succeeded.","color": "good"}]}' 'https://hooks.slack.com/services/'$SLACKPARAM1'/'$SLACKPARAM2'/'$SLACKPARAM3
+curl -X POST -H 'Content-type: application/json' --data '{"icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png","username": "Release Wrapper Gate","attachments": [{"text": "Packaging VoiceIt2-NodeJS version '$version' succeeded. Make sure you git pull origin master since voiceitbot updated package.json with the new version","color": "good"}]}' 'https://hooks.slack.com/services/'$SLACKPARAM1'/'$SLACKPARAM2'/'$SLACKPARAM3

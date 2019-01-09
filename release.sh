@@ -55,7 +55,7 @@ then
       "username": "Release Wrapper Gate",
         "attachments": [
             {
-                "text": "Packaging '$reponame' version '$version' failed. You need to specify RELEASEMAJOR, RELEASEMINOR, or RELEASEPATCH in the commit title",
+                "text": "Packaging '$reponame' failed. You need to specify RELEASEMAJOR, RELEASEMINOR, or RELEASEPATCH in the commit title",
                 "color": "danger"
             }
         ]

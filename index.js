@@ -604,7 +604,7 @@ function VoiceIt2(apk, tok) {
     if (options.userId === undefined) {
       callback({ status: 400, responseCode: 'FAIL', message: 'Missing userId argument' });
     }
-    if (options.timeOut === undefined) {
+    if (options.secondsToTimeout === undefined) {
       this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token`)
         .then((httpResponse) => {
           callback(httpResponse.data);
@@ -612,7 +612,7 @@ function VoiceIt2(apk, tok) {
           callback(error.response.data);
         });
     } else {
-      this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token?timeOut=${options.timeOut}`)
+      this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token?timeOut=${options.secondsToTimeout}`)
         .then((httpResponse) => {
           callback(httpResponse.data);
         }).catch((error) => {

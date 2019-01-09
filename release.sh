@@ -50,6 +50,16 @@ then
     patch=$(($patch+1))
   else
     echo "Must specify RELEASEMAJOR, RELEASEMINOR, or RELEASEPATCH in the title." 1>&2
+    curl -X POST -H 'Content-type: application/json' --data '{
+      "icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png",
+      "username": "Release Wrapper Gate",
+        "attachments": [
+            {
+                "text": "Packaging '$reponame' version '$version' failed. You need to specify RELEASEMAJOR, RELEASEMINOR, or RELEASEPATCH in the commit title",
+                "color": "danger"
+            }
+        ]
+    }' 'https://hooks.slack.com/services/'$SLACKPARAM1'/'$SLACKPARAM2'/'$SLACKPARAM3
     exit 1
   fi
 
@@ -60,6 +70,17 @@ then
   then
     export DO_DEPLOY=YES
     echo "DO_DEPLOY=YES" >> ~/.profile
+    curl -X POST -H 'Content-type: application/json' --data '{
+      "icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png",
+      "username": "Release Wrapper Gate",
+        "attachments": [
+            {
+                "text": "Packaging '$reponame' version '$version' succeeded.",
+                "color": "good"
+            }
+        ]
+    }' 'https://hooks.slack.com/services/'$SLACKPARAM1'/'$SLACKPARAM2'/'$SLACKPARAM3
+    exit 0
   else
     curl -X POST -H 'Content-type: application/json' --data '{
       "icon_url": "https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/TravisCI-Mascot-1.png",

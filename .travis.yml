@@ -4,34 +4,34 @@ node_js:
 before_script:
   - mkdir test-data
   - cd test-data
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentBMyFaceAndVoice.m4a
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentA1.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentA2.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentA3.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentA4.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/verificationA1.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentC1.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentC2.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/enrollmentC3.wav
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentB1.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentB2.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentB3.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentA1.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentA2.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentA3.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoVerificationB1.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoVerificationB2.mp4
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentC1.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentC2.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/videoEnrollmentC3.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentB1.mp4
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentB2.mp4
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentB3.mp4
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentA1.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentA2.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceEnrollmentA3.mov
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceVerificationB1.mp4
-  - wget https://s3.amazonaws.com/voiceit-api2-testing-files/test-data/faceVerificationC1.mp4
+  - wget https://drive.voiceit.io/files/enrollmentBMyFaceAndVoice.m4a
+  - wget https://drive.voiceit.io/files/enrollmentA1.wav
+  - wget https://drive.voiceit.io/files/enrollmentA2.wav
+  - wget https://drive.voiceit.io/files/enrollmentA3.wav
+  - wget https://drive.voiceit.io/files/enrollmentA4.wav
+  - wget https://drive.voiceit.io/files/verificationA1.wav
+  - wget https://drive.voiceit.io/files/enrollmentC1.wav
+  - wget https://drive.voiceit.io/files/enrollmentC2.wav
+  - wget https://drive.voiceit.io/files/enrollmentC3.wav
+  - wget https://drive.voiceit.io/files/videoEnrollmentB1.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentB2.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentB3.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentA1.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentA2.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentA3.mov
+  - wget https://drive.voiceit.io/files/videoVerificationB1.mov
+  - wget https://drive.voiceit.io/files/videoVerificationB2.mp4
+  - wget https://drive.voiceit.io/files/videoEnrollmentC1.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentC2.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentC3.mov
+  - wget https://drive.voiceit.io/files/faceEnrollmentB1.mp4
+  - wget https://drive.voiceit.io/files/faceEnrollmentB2.mp4
+  - wget https://drive.voiceit.io/files/faceEnrollmentB3.mp4
+  - wget https://drive.voiceit.io/files/faceEnrollmentA1.mov
+  - wget https://drive.voiceit.io/files/faceEnrollmentA2.mov
+  - wget https://drive.voiceit.io/files/faceEnrollmentA3.mov
+  - wget https://drive.voiceit.io/files/faceVerificationB1.mp4
+  - wget https://drive.voiceit.io/files/faceVerificationC1.mp4
   - cd ..
   - npm i
 script:

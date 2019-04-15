@@ -4,7 +4,7 @@ const TestConfig = {
   FAKE_USER_ID: 'usr_asdsadsadsa',
   FAKE_GROUP_ID: 'grp_asdsadsadsa',
   INVALID_FILE_PATH: 'invalidFileFound',
-  S3_FILES_URL:'https://s3.amazonaws.com/voiceit-api2-testing-files/',
+  S3_FILES_URL:'https://drive.voiceit.io/files/',
   ENROLLMENT_FILE_FACE_AND_VOICE: 'test-data/enrollmentBMyFaceAndVoice.m4a',
   ENROLLMENT_FILE_A_1 : 'test-data/enrollmentA1.wav',
   ENROLLMENT_FILE_A_2 : 'test-data/enrollmentA2.wav',
@@ -36,7 +36,7 @@ const TestConfig = {
   FACE_VERIFICATION_FILE_C_1 : 'test-data/faceVerificationC1.mp4',
   ENGLISH_PHRASE : 'Never forget tomorrow is a new day',
   getURL:(filePath)=>{
-    return `${TestConfig.S3_FILES_URL}${filePath}`;
+    return `${TestConfig.S3_FILES_URL}${filePath.replace('test-data/', '')}`;
   }
 }
 module.exports = TestConfig;

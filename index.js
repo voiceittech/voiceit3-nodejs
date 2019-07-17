@@ -4,7 +4,7 @@ const fs = require('fs');
 const querystring = require('querystring');
 const pckg = require('./package.json');
 
-const BASE_URL = 'https://api.voiceit.io';
+let BASE_URL = 'https://api.voiceit.io';
 
 function checkFileExists(filePath, callback) {
   if (!fs.existsSync(filePath)) {
@@ -14,7 +14,11 @@ function checkFileExists(filePath, callback) {
   return true;
 }
 
-function VoiceIt2(apk, tok) {
+function VoiceIt2(apk, tok, baseUrl) {
+  if (baseUrl !== undefined) {
+    BASE_URL = baseUrl;
+  }
+
   this.axiosInstance = axios.create({
     auth: {
       username: apk,

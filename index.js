@@ -551,30 +551,33 @@ function VoiceIt2(apk, tok, baseUrl) {
   };
 
   this.createUserToken = (options, callback) => {
-    if (options.userId === undefined) {
-      callback({ status: 400, responseCode: 'FAIL', message: 'Missing userId argument' });
-    }
 
-    if (options.secondsToTimeout !== undefined && typeof options.secondsToTimeout !== 'number') {
-      callback({ status: 400, responseCode: 'FAIL', message: 'secondsToTimeout must be a numeric value' });
-    }
+    if (options.userId === undefined || (options.secondsToTimeout !== undefined && typeof options.secondsToTimeout !== 'number')) {
+      if (options.userId === undefined) {
+        callback({ status: 400, responseCode: 'FAIL', message: 'Missing userId argument' });
+      }
 
-
-    if (options.secondsToTimeout === undefined) {
-      this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token`)
-        .then((httpResponse) => {
-          callback(httpResponse.data);
-        }).catch((error) => {
-          callback(error.response.data);
-        });
+      if (options.secondsToTimeout !== undefined && typeof options.secondsToTimeout !== 'number') {
+        callback({ status: 400, responseCode: 'FAIL', message: 'secondsToTimeout must be a numeric value' });
+      }
     } else {
-      this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token?timeOut=${options.secondsToTimeout}`)
-        .then((httpResponse) => {
-          callback(httpResponse.data);
-        }).catch((error) => {
-          callback(error.response.data);
-        });
+      if (options.secondsToTimeout === undefined) {
+        this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token`)
+          .then((httpResponse) => {
+            callback(httpResponse.data);
+          }).catch((error) => {
+            callback(error.response.data);
+          });
+      } else {
+        this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token?timeOut=${options.secondsToTimeout}`)
+          .then((httpResponse) => {
+            callback(httpResponse.data);
+          }).catch((error) => {
+            callback(error.response.data);
+          });
+      }
     }
+
   };
 
   this.expireUserTokens = (options, callback) => {

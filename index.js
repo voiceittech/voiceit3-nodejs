@@ -573,7 +573,6 @@ function VoiceIt2(apk, tok, baseUrl) {
           callback(error.response.data);
         });
     }
-
   };
 
   this.expireUserTokens = (options, callback) => {

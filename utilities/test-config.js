@@ -4,7 +4,7 @@ const TestConfig = {
   FAKE_USER_ID: 'usr_asdsadsadsa',
   FAKE_GROUP_ID: 'grp_asdsadsadsa',
   INVALID_FILE_PATH: 'invalidFileFound',
-  S3_FILES_URL:'https://drive.voiceit.io/files/',
+  VOICEIT_DRIVE_URL:'https://drive.voiceit.io/files/',
   ENROLLMENT_FILE_FACE_AND_VOICE: 'test-data/enrollmentBMyFaceAndVoice.m4a',
   ENROLLMENT_FILE_A_1 : 'test-data/enrollmentA1.wav',
   ENROLLMENT_FILE_A_2 : 'test-data/enrollmentA2.wav',
@@ -14,12 +14,20 @@ const TestConfig = {
   ENROLLMENT_FILE_C_1 : 'test-data/enrollmentC1.wav',
   ENROLLMENT_FILE_C_2 : 'test-data/enrollmentC2.wav',
   ENROLLMENT_FILE_C_3 : 'test-data/enrollmentC3.wav',
+  ENROLLMENT_FILE_D_1 : 'test-data/enrollmentD1.m4a',
+  ENROLLMENT_FILE_D_2 : 'test-data/enrollmentD2.m4a',
+  ENROLLMENT_FILE_D_3 : 'test-data/enrollmentD3.m4a',
+  VERIFICATION_FILE_D_1 : 'test-data/verificationD1.m4a',
   VIDEO_ENROLLMENT_FILE_B_1 : 'test-data/videoEnrollmentB1.mov',
   VIDEO_ENROLLMENT_FILE_B_2 : 'test-data/videoEnrollmentB2.mov',
   VIDEO_ENROLLMENT_FILE_B_3 : 'test-data/videoEnrollmentB3.mov',
   VIDEO_ENROLLMENT_FILE_A_1 : 'test-data/videoEnrollmentA1.mov',
   VIDEO_ENROLLMENT_FILE_A_2 : 'test-data/videoEnrollmentA2.mov',
   VIDEO_ENROLLMENT_FILE_A_3 : 'test-data/videoEnrollmentA3.mov',
+  VIDEO_ENROLLMENT_FILE_D_1 : 'test-data/videoEnrollmentD1.mov',
+  VIDEO_ENROLLMENT_FILE_D_2 : 'test-data/videoEnrollmentD2.mov',
+  VIDEO_ENROLLMENT_FILE_D_3 : 'test-data/videoEnrollmentD3.mov',
+  VIDEO_VERIFICATION_FILE_D_1 : 'test-data/videoVerificationD1.mov',
   VIDEO_VERIFICATION_FILE_B_1 : 'test-data/videoVerificationB1.mov',
   VIDEO_VERIFICATION_FILE_B_2 : 'test-data/videoVerificationB2.mp4',
   VIDEO_VERIFICATION_FILE_A_1 : 'test-data/videoVerificationA1.mov',
@@ -36,7 +44,7 @@ const TestConfig = {
   FACE_VERIFICATION_FILE_C_1 : 'test-data/faceVerificationC1.mp4',
   ENGLISH_PHRASE : 'Never forget tomorrow is a new day',
   getURL:(filePath)=>{
-    return `${TestConfig.S3_FILES_URL}${filePath.replace('test-data/', '')}`;
+    return `${TestConfig.VOICEIT_DRIVE_URL}${filePath.replace('test-data/', '')}`;
   }
 }
 module.exports = TestConfig;

@@ -80,15 +80,15 @@ const identification  = {
                             identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_A_1,()=>{
                                 identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_A_2,()=>{
                                     identification.setupVoiceEnrollment(0, config.ENROLLMENT_FILE_A_3,()=>{
-                                                identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_C_1,()=>{
-                                                    identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_C_2,()=>{
-                                                        identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_C_3,()=>{
+                                                identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_D_1,()=>{
+                                                    identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_D_2,()=>{
+                                                        identification.setupVoiceEnrollment(1, config.ENROLLMENT_FILE_D_3,()=>{
                                                             identification.setupVideoEnrollment(0, config.VIDEO_ENROLLMENT_FILE_A_1,()=>{
                                                                 identification.setupVideoEnrollment(0, config.VIDEO_ENROLLMENT_FILE_A_2,()=>{
                                                                     identification.setupVideoEnrollment(0, config.VIDEO_ENROLLMENT_FILE_A_3,()=>{
-                                                                                identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_C_1,()=>{
-                                                                                    identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_C_2,()=>{
-                                                                                        identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_C_3,()=>{
+                                                                                identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_D_1,()=>{
+                                                                                    identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_D_2,()=>{
+                                                                                        identification.setupVideoEnrollment(1, config.VIDEO_ENROLLMENT_FILE_D_3,()=>{
                                                                                           console.log("Finished Setup");
                                                                                           next();
                                                                                 });

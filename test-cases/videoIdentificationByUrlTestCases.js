@@ -16,7 +16,7 @@ const videoIdentificationByUrlTestCases = [
     expectedRc: responseCode.SUCCESS,
     expectedSc: 200,
     contentLanguage: config.CONTENT_LANGUAGE_REAL,
-    videoFileURL: config.getURL(config.VIDEO_ENROLLMENT_FILE_C_1),
+    videoFileURL: config.getURL(config.VIDEO_ENROLLMENT_FILE_D_1),
     expectedText: config.ENGLISH_PHRASE,
     phrase: config.ENGLISH_PHRASE,
     user: 'C',

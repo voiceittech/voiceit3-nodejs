@@ -13,6 +13,10 @@ before_script:
   - wget https://drive.voiceit.io/files/enrollmentC1.wav
   - wget https://drive.voiceit.io/files/enrollmentC2.wav
   - wget https://drive.voiceit.io/files/enrollmentC3.wav
+  - wget https://drive.voiceit.io/files/enrollmentD1.m4a
+  - wget https://drive.voiceit.io/files/enrollmentD2.m4a
+  - wget https://drive.voiceit.io/files/enrollmentD3.m4a
+  - wget https://drive.voiceit.io/files/verificationD1.m4a
   - wget https://drive.voiceit.io/files/videoEnrollmentB1.mov
   - wget https://drive.voiceit.io/files/videoEnrollmentB2.mov
   - wget https://drive.voiceit.io/files/videoEnrollmentB3.mov
@@ -32,6 +36,10 @@ before_script:
   - wget https://drive.voiceit.io/files/faceEnrollmentA3.mov
   - wget https://drive.voiceit.io/files/faceVerificationB1.mp4
   - wget https://drive.voiceit.io/files/faceVerificationC1.mp4
+  - wget https://drive.voiceit.io/files/videoEnrollmentD1.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentD2.mov
+  - wget https://drive.voiceit.io/files/videoEnrollmentD3.mov
+  - wget https://drive.voiceit.io/files/videoVerificationD1.mov
   - cd ..
   - npm i
 script:
@@ -44,6 +52,8 @@ notifications:
     on_failure: never
 after_success:
   - ./release.sh
+  - source ~/.profile 
+  - ./email.sh
 deploy:
   skip_cleanup: true
   provider: npm

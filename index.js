@@ -209,7 +209,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.createVoiceEnrollment = (options, callback) => {
     if (!checkFileExists(options.audioFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.audioFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -247,7 +247,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.createFaceEnrollment = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -279,7 +279,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.createVideoEnrollment = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -328,7 +328,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.voiceVerification = (options, callback) => {
     if (!checkFileExists(options.audioFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.audioFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -366,7 +366,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.faceVerification = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -401,7 +401,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.videoVerification = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -442,7 +442,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.voiceIdentification = (options, callback) => {
     if (!checkFileExists(options.audioFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.audioFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -480,7 +480,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.faceIdentification = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -514,7 +514,7 @@ function VoiceIt2(apk, tok, baseUrl) {
 
   this.videoIdentification = (options, callback) => {
     if (!checkFileExists(options.videoFilePath, callback)) {
-      return;
+      callback({ status: 400, responseCode: 'FAIL', message: options.videoFilePath + ' does not exist' });
     }
 
     const form = new FormData();
@@ -554,6 +554,12 @@ function VoiceIt2(apk, tok, baseUrl) {
     if (options.userId === undefined) {
       callback({ status: 400, responseCode: 'FAIL', message: 'Missing userId argument' });
     }
+
+    if (options.secondsToTimeout.isNaN()) {
+      callback({ status: 400, responseCode: 'FAIL', message: 'secondsToTimeout must be a numeric value' });
+    }
+
+
     if (options.secondsToTimeout === undefined) {
       this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token`)
         .then((httpResponse) => {

@@ -555,7 +555,7 @@ function VoiceIt2(apk, tok, baseUrl) {
       callback({ status: 400, responseCode: 'FAIL', message: 'Missing userId argument' });
     }
 
-    if (options.secondsToTimeout !== undefined && isNaN(options.secondsToTimeout)) {
+    if (options.secondsToTimeout !== undefined && Number.isNaN(options.secondsToTimeout)) {
       callback({ status: 400, responseCode: 'FAIL', message: 'secondsToTimeout must be a numeric value' });
     }
 

@@ -1,11 +1,10 @@
 {
   "name": "voiceit2-nodejs",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "VoiceIt's API 2.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && mocha",
-    "lint": "eslint index.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -28,15 +27,10 @@
   },
   "homepage": "https://github.com/voiceittech/voiceit2-nodejs#readme",
   "dependencies": {
-    "axios": "^0.18.0",
-    "form-data": "^2.3.2",
-    "mocha": "^5.2.0",
+    "axios": "^0.19.2",
+    "form-data": "^3.0.0",
+    "mocha": "^7.0.1",
     "npm": "^6.4.0"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0"
   },
   "publishConfig": {
     "access": "public"

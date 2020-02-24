@@ -50,7 +50,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -59,7 +62,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -68,7 +74,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -77,7 +86,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -86,7 +98,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -95,7 +110,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -106,7 +124,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -115,7 +136,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -124,7 +148,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -137,7 +164,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -151,7 +181,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -165,7 +198,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -174,7 +210,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -185,7 +224,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -194,7 +236,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -203,7 +248,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -219,13 +267,17 @@ function VoiceIt2(apk, tok, baseUrl) {
     form.append('recording', fs.createReadStream(options.audioFilePath), {
       filename: 'recording.wav',
     });
+    
 
     this.axiosInstance.post(`${BASE_URL}/enrollments/voice${this.notificationUrl}`, form, {
       headers: form.getHeaders(),
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -241,7 +293,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -259,7 +314,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -273,7 +331,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -295,7 +356,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -311,7 +375,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -320,7 +387,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 
@@ -344,7 +414,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -360,7 +433,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -380,7 +456,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -395,7 +474,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -417,7 +499,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -434,7 +519,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -458,7 +546,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -474,7 +565,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -494,7 +588,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -508,7 +605,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -530,7 +630,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -546,7 +649,10 @@ function VoiceIt2(apk, tok, baseUrl) {
     }).then((httpResponse) => {
       callback(httpResponse.data);
     }).catch((error) => {
-      callback(error.response.data);
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
     });
   };
 
@@ -563,14 +669,20 @@ function VoiceIt2(apk, tok, baseUrl) {
         .then((httpResponse) => {
           callback(httpResponse.data);
         }).catch((error) => {
-          callback(error.response.data);
+          if (error.response && error.response.data)
+            callback(error.response.data);
+          else
+            throw error;
         });
     } else {
       this.axiosInstance.post(`${BASE_URL}/users/${options.userId}/token?timeOut=${options.secondsToTimeout}`)
         .then((httpResponse) => {
           callback(httpResponse.data);
         }).catch((error) => {
-          callback(error.response.data);
+          if (error.response && error.response.data)
+            callback(error.response.data);
+          else
+            throw error;
         });
     }
   };
@@ -583,7 +695,10 @@ function VoiceIt2(apk, tok, baseUrl) {
       .then((httpResponse) => {
         callback(httpResponse.data);
       }).catch((error) => {
-        callback(error.response.data);
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
       });
   };
 }

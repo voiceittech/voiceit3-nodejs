@@ -81,6 +81,93 @@ function VoiceIt2(apk, tok, baseUrl) {
       });
   };
 
+  this.createUnmanagedSubAccount = (options, callback) => {
+    const form = new FormData();
+    form.append('firstName', options.firstName || '');
+    form.append('contentLanguage', options.contentLanguage || '');
+    form.append('lastName', options.lastName || '');
+    form.append('email', options.email || '');
+    form.append('password', options.password || '');
+
+    this.axiosInstance.post(`${BASE_URL}/subaccount/unmanaged${this.notificationUrl}`, form, {
+      headers: form.getHeaders(),
+    }).then((httpResponse) => {
+      callback(httpResponse.data);
+    }).catch((error) => {
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
+    });
+  };
+
+  this.createManagedSubAccount = (options, callback) => {
+    const form = new FormData();
+    form.append('firstName', options.firstName || '');
+    form.append('contentLanguage', options.contentLanguage || '');
+    form.append('lastName', options.lastName || '');
+    form.append('email', options.email || '');
+    form.append('password', options.password || '');
+
+    this.axiosInstance.post(`${BASE_URL}/subaccount/managed${this.notificationUrl}`, form, {
+      headers: form.getHeaders(),
+    }).then((httpResponse) => {
+      callback(httpResponse.data);
+    }).catch((error) => {
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
+    });
+  };
+
+   this.createManagedSubAccount = (options, callback) => {
+    const form = new FormData();
+    form.append('firstName', options.firstName || '');
+    form.append('contentLanguage', options.contentLanguage || '');
+    form.append('lastName', options.lastName || '');
+    form.append('email', options.email || '');
+    form.append('password', options.password || '');
+
+    this.axiosInstance.post(`${BASE_URL}/subaccount/managed${this.notificationUrl}`, form, {
+      headers: form.getHeaders(),
+    }).then((httpResponse) => {
+      callback(httpResponse.data);
+    }).catch((error) => {
+      if (error.response && error.response.data)
+        callback(error.response.data);
+      else
+        throw error;
+    });
+  };
+
+  this.regenerateSubAccountAPIToken = (options, callback) => {
+    this.axiosInstance.post(`${BASE_URL}/subaccount/${options.subAccountAPIKey}${this.notificationUrl}`)
+      .then((httpResponse) => {
+        callback(httpResponse.data);
+      }).catch((error) => {
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
+      });
+  };
+
+  //TODO: is it ok to name the property subAccountAPIKey to be consistent with the other wrappers
+  // or should it be userId? 
+  this.deleteSubAccount = (options, callback) => {
+    this.axiosInstance.delete(`${BASE_URL}/subaccount/${options.subAccountAPIKey}${this.notificationUrl}`)
+      .then((httpResponse) => {
+        callback(httpResponse.data);
+      }).catch((error) => {
+        if (error.response && error.response.data)
+          callback(error.response.data);
+        else
+          throw error;
+      });
+  };
+
+
   this.checkUserExists = (options, callback) => {
     this.axiosInstance.get(`${BASE_URL}/users/${options.userId}${this.notificationUrl}`)
       .then((httpResponse) => {

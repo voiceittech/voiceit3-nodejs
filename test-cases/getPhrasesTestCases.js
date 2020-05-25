@@ -6,7 +6,7 @@ const getPhrasesTestCases = [
   expectedRc: responseCode.SUCCESS,
   expectedSc: 200,
   contentLanguage: config.CONTENT_LANGUAGE_REAL,
-  expectedMessage: 'Successfully got all ' + config.CONTENT_LANGUAGE_REAL + ' phrases for account'
+  expectedMessage: 'Successfully got all ' + config.CONTENT_LANGUAGE_REAL + ' phrases for developer account'
 },
 {
   expectedRc: responseCode.INVALID_CONTENT_LANGUAGE_PARAMETER,

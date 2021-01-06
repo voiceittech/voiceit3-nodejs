@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/voiceittech/voiceit2-nodejs#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "form-data": "^3.0.0",
     "mocha": "^7.0.1",
     "npm": "^6.13.4"

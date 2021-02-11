@@ -28,6 +28,8 @@ function VoiceIt2(apk, tok, baseUrl) {
       platformId: '31',
       platformVersion: pckg.version,
     },
+    maxContentLength: Infinity,
+    maxBodyLength: Infinity,
   });
 
   this.notificationUrl = '';

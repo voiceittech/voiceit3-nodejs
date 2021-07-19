@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/voiceittech/voiceit2-nodejs/master/nodejs.png" width="100%" style="width:100%" />
 
-# VoiceIt2-NodeJS [![npm version](https://badge.fury.io/js/voiceit2-nodejs.svg)](https://badge.fury.io/js/voiceit2-nodejs) [![buildstatus](https://travis-ci.org/voiceittech/VoiceIt2-NodeJS.svg?branch=master)](https://travis-ci.org/voiceittech/VoiceIt2-NodeJS)
+# VoiceIt2-NodeJS [![npm version](https://badge.fury.io/js/voiceit2-nodejs.svg)](https://badge.fury.io/js/voiceit2-nodejs) [![buildstatus](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS.svg?branch=master)](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS)
 
 ## NPM installation 
 

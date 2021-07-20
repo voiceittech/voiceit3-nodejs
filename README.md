@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/voiceittech/voiceit2-nodejs/master/nodejs.png" width="100%" style="width:100%" />
 
-# VoiceIt2-NodeJS [![npm version](https://badge.fury.io/js/voiceit2-nodejs.svg)](https://badge.fury.io/js/voiceit2-nodejs) ![downloads](https://img.shields.io/npm/dm/voiceit2-nodejs) [![buildstatus](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS.svg?branch=master)](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS) ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+# VoiceIt2-NodeJS
+[![buildstatus](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS.svg?branch=master)](https://travis-ci.com/voiceittech/VoiceIt2-NodeJS) [![version](https://img.shields.io/npm/v/voiceit2-nodejs)](https://www.npmjs.com/package/voiceit2-nodejs) [![downloads](https://img.shields.io/npm/dm/voiceit2-nodejs)](https://www.npmjs.com/package/voiceit2-nodejs) ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 ## NPM installation 
 

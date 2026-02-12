@@ -14,7 +14,7 @@ function checkFileExists(filePath, callback) {
   return true;
 }
 
-function VoiceIt2(apk, tok, baseUrl) {
+function VoiceIt3(apk, tok, baseUrl) {
   if (baseUrl !== undefined) {
     BASE_URL = baseUrl;
   }
@@ -773,4 +773,4 @@ function VoiceIt2(apk, tok, baseUrl) {
   };
 }
 
-module.exports = VoiceIt2;
+module.exports = VoiceIt3;

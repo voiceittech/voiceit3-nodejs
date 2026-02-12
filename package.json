@@ -1,5 +1,5 @@
 {
-  "name": "voiceit2-nodejs",
+  "name": "voiceit3-nodejs",
   "version": "2.5.3",
   "description": "VoiceIt's API 3.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceittech/voiceit2-nodejs.git"
+    "url": "git+https://github.com/voiceittech/voiceit3-nodejs.git"
   },
   "keywords": [
     "nodejs",
@@ -23,9 +23,9 @@
   "author": "Armaan Bindra",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/voiceittech/voiceit2-nodejs/issues"
+    "url": "https://github.com/voiceittech/voiceit3-nodejs/issues"
   },
-  "homepage": "https://github.com/voiceittech/voiceit2-nodejs#readme",
+  "homepage": "https://github.com/voiceittech/voiceit3-nodejs#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "form-data": "^3.0.0",

@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -r test-data
 commit=$(git log -1 --pretty=%B | head -n 1)
-version=$(echo $(npm search voiceit2 | grep voiceit2 | awk '{print $11}') | tr "." "\n")
+version=$(echo $(npm search voiceit3 | grep voiceit3 | awk '{print $11}') | tr "." "\n")
 set -- $version
 
 major=$1

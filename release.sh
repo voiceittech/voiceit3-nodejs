@@ -97,7 +97,7 @@ then
           formattedmessages=$formattedmessages'|'$i
         done
 
-        curl -X POST -H "X-Admin-Password: $EMAILAUTHPASS" --data-urlencode "messages=$formattedmessages" -d "packageManaged=true" --data-urlencode "instructions=npm update</code></div><br /><p class=\"p1\"><span class=\"s1\">inside your project.</span></p><br />" "https://api.voiceit.io/platform/31"
+        curl -X POST -H "X-Admin-Password: $EMAILAUTHPASS" --data-urlencode "messages=$formattedmessages" -d "packageManaged=true" --data-urlencode "instructions=npm update</code></div><br /><p class=\"p1\"><span class=\"s1\">inside your project.</span></p><br />" "https://qpi.voiceit.io/platform/31"
       fi
 
     exit 0

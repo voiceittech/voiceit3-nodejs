@@ -4,7 +4,7 @@ const fs = require('fs');
 const querystring = require('querystring');
 const pckg = require('./package.json');
 
-let BASE_URL = 'https://api.voiceit.io';
+let BASE_URL = 'https://qpi.voiceit.io';
 
 function checkFileExists(filePath, callback) {
   if (!fs.existsSync(filePath)) {

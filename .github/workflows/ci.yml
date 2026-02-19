@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Download test data
+        run: |
+          mkdir test-data
+          cd test-data
+          wget https://drive.voiceit.io/files/enrollmentBMyFaceAndVoice.m4a
+          wget https://drive.voiceit.io/files/enrollmentA1.wav
+          wget https://drive.voiceit.io/files/enrollmentA2.wav
+          wget https://drive.voiceit.io/files/enrollmentA3.wav
+          wget https://drive.voiceit.io/files/enrollmentA4.wav
+          wget https://drive.voiceit.io/files/verificationA1.wav
+          wget https://drive.voiceit.io/files/enrollmentC1.wav
+          wget https://drive.voiceit.io/files/enrollmentC2.wav
+          wget https://drive.voiceit.io/files/enrollmentC3.wav
+          wget https://drive.voiceit.io/files/enrollmentD1.m4a
+          wget https://drive.voiceit.io/files/enrollmentD2.m4a
+          wget https://drive.voiceit.io/files/enrollmentD3.m4a
+          wget https://drive.voiceit.io/files/verificationD1.m4a
+          wget https://drive.voiceit.io/files/videoEnrollmentB1.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentB2.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentB3.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentA1.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentA2.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentA3.mov
+          wget https://drive.voiceit.io/files/videoVerificationA1.mov
+          wget https://drive.voiceit.io/files/videoVerificationB1.mov
+          wget https://drive.voiceit.io/files/videoVerificationB2.mp4
+          wget https://drive.voiceit.io/files/videoEnrollmentC1.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentC2.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentC3.mov
+          wget https://drive.voiceit.io/files/faceEnrollmentB1.mp4
+          wget https://drive.voiceit.io/files/faceEnrollmentB2.mp4
+          wget https://drive.voiceit.io/files/faceEnrollmentB3.mp4
+          wget https://drive.voiceit.io/files/faceEnrollmentA1.mov
+          wget https://drive.voiceit.io/files/faceEnrollmentA2.mov
+          wget https://drive.voiceit.io/files/faceEnrollmentA3.mov
+          wget https://drive.voiceit.io/files/faceVerificationB1.mp4
+          wget https://drive.voiceit.io/files/faceVerificationC1.mp4
+          wget https://drive.voiceit.io/files/videoEnrollmentD1.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentD2.mov
+          wget https://drive.voiceit.io/files/videoEnrollmentD3.mov
+          wget https://drive.voiceit.io/files/videoVerificationD1.mov
+          wget https://drive.voiceit.io/files/faceA1.png
+          wget https://drive.voiceit.io/files/faceB1.jpg
+          wget https://drive.voiceit.io/files/faceB2.jpg
+          wget https://drive.voiceit.io/files/faceB3.jpg
+          wget https://drive.voiceit.io/files/faceC1.jpg
+          wget https://drive.voiceit.io/files/fali_photo1.jpg
+          wget https://drive.voiceit.io/files/fali_photo2.jpg
+          wget https://drive.voiceit.io/files/fali_video2.mp4
+          wget https://drive.voiceit.io/files/sttf.wav
+          wget https://drive.voiceit.io/files/srnr.m4a
+          wget https://drive.voiceit.io/files/sstl.wav
+          wget https://drive.voiceit.io/files/sstq.wav
+          wget https://drive.voiceit.io/files/nehsd.wav
+          wget https://drive.voiceit.io/files/pdnm.wav
+          wget https://drive.voiceit.io/files/fnfd.mp4
+          wget https://drive.voiceit.io/files/ftmf_video.mov
+          wget https://drive.voiceit.io/files/sttf_video.mov
+          wget https://drive.voiceit.io/files/pdnm_video.mov
+          wget https://drive.voiceit.io/files/BFaceCVoice.mp4
+          wget https://drive.voiceit.io/files/BVoiceCFace.mp4
+          wget https://drive.voiceit.io/files/fake.wav
+          wget https://drive.voiceit.io/files/fake.mp4
+          wget https://drive.voiceit.io/files/fake.jpeg
+          touch empty.file
+
+      - name: Run tests
+        run: npm test
+        env:
+          VOICEIT_API_KEY: ${{ secrets.VOICEIT_API_KEY }}
+          VOICEIT_API_TOKEN: ${{ secrets.VOICEIT_API_TOKEN }}

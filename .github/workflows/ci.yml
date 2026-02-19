@@ -88,5 +88,5 @@ jobs:
       - name: Run tests
         run: npm test
         env:
-          VOICEIT_API_KEY: ${{ secrets.VOICEIT_API_KEY }}
-          VOICEIT_API_TOKEN: ${{ secrets.VOICEIT_API_TOKEN }}
+          VIAPIKEY: ${{ secrets.VIAPIKEY }}
+          VIAPITOKEN: ${{ secrets.VIAPITOKEN }}

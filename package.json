@@ -1,5 +1,5 @@
 {
-  "name": "voiceit3-nodejs",
+  "name": "@voiceittech/voiceit3-nodejs",
   "version": "2.5.3",
   "description": "VoiceIt's API 3.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
@@ -34,6 +34,6 @@
     "mocha": "11.3.0"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   }
 }

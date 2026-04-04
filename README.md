@@ -1,5 +1,10 @@
 <img src="https://raw.githubusercontent.com/voiceittech/voiceit3-nodejs/master/nodejs.png" width="100%" style="width:100%" />
 
+[![Version](https://img.shields.io/badge/version-2.5.5-blue)](https://github.com/voiceittech/VoiceIt3-NodeJS)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/VoiceIt3-NodeJS/blob/main/LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Node.js-lightgrey)](https://github.com/voiceittech/VoiceIt3-NodeJS)
+[![VoiceIt API](https://img.shields.io/badge/VoiceIt-API%203.0-blue)](https://voiceit.io)
+
 
 ## Installation
 

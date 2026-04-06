@@ -8,16 +8,17 @@ if (!apiKey || !apiToken) { console.log("Set VOICEIT_API_KEY and VOICEIT_API_TOK
 
 const vi = new VoiceIt3(apiKey, apiToken);
 const phrase = "never forget tomorrow is a new day";
-const td = "test-data";
+const td = path.join(__dirname, "test-data");
 let errors = 0;
 let step = 0;
 const total = 7;
 
 function check(name, res) {
+  if (res instanceof Error) { console.log(`FAIL: ${name} (${res.message})`); errors++; step++; return {}; }
   const r = (typeof res === 'string') ? JSON.parse(res) : res;
   const code = r.responseCode || '?';
   if (code === 'SUCC') { console.log(`PASS: ${name} (${code})`); }
-  else { console.log(`FAIL: ${name} (${code})`); errors++; }
+  else { console.log(`FAIL: ${name} (${code}) ${r.message || ''}`); errors++; }
   step++;
   return r;
 }
@@ -27,7 +28,7 @@ vi.createUser(function(res) {
   const userId = r.userId;
 
   // Enroll 3 videos sequentially
-  vi.createVideoEnrollment({userId, contentLanguage:"en-US", phrase, videoFilePath: path.join(td,"videoEnrollmentA1.mov")}, function(res) {
+  vi.createVideoEnrollment({userId, contentLanguage:"en-US", phrase, videoFilePath: path.join(td, "videoEnrollmentA1.mov")}, function(res) {
     check("VideoEnrollment1", res);
     vi.createVideoEnrollment({userId, contentLanguage:"en-US", phrase, videoFilePath: path.join(td,"videoEnrollmentA2.mov")}, function(res) {
       check("VideoEnrollment2", res);

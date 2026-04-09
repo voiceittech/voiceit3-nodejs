@@ -1,6 +1,6 @@
 {
   "name": "@voiceittech/voiceit3-nodejs",
-  "version": "2.5.5",
+  "version": "3.0.0",
   "description": "VoiceIt's API 3.0 Face + Voice Verification/Identification Node Wrapper",
   "main": "index.js",
   "scripts": {

@@ -10,6 +10,14 @@
 
 ## Installation
 
+This package is hosted on [GitHub Packages](https://github.com/orgs/voiceittech/packages). Add the registry to your `.npmrc`:
+
+```
+@voiceittech:registry=https://npm.pkg.github.com
+```
+
+Then install:
+
 ```
 npm i @voiceittech/voiceit3-nodejs
 ```

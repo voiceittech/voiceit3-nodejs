@@ -1,4 +1,4 @@
-<img src="./nodejs.png" width="100%" style="width:100%" />
+<img src="https://raw.githubusercontent.com/voiceittech/voiceit3-nodejs/main/nodejs.png" width="100%" style="width:100%" />
 
 [![API Test](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml/badge.svg)](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml)
 [![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-nodejs/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-nodejs/pulls?q=is%3Apr+label%3Adependencies)
@@ -28,7 +28,7 @@ npm i @voiceittech/voiceit3-nodejs
 
 Sign up at [voiceit.io/pricing](https://voiceit.io/pricing) to get your API Key and Token, then log in to the [Dashboard](https://dashboard.voiceit.io) to manage your account.
 
-<img src="./Graphics/getcredentials.png" alt="API Key and Token" width="400px" />
+<img src="https://raw.githubusercontent.com/voiceittech/voiceit3-nodejs/main/Graphics/getcredentials.png" alt="API Key and Token" width="400px" />
 
 ## API Calls
 

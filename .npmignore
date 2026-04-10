@@ -1,7 +1,11 @@
 test/
 test-cases/
+test-data/
 utilities/
+Graphics/
+.github/
+nodejs.png
+test_example.js
 .travis.yml
 .eslintrc.json
 release.sh
-nodejs.png

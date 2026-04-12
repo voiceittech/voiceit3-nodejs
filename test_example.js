@@ -7,7 +7,7 @@ const apiToken = process.env.VOICEIT_API_TOKEN;
 if (!apiKey || !apiToken) { console.log("Set VOICEIT_API_KEY and VOICEIT_API_TOKEN"); process.exit(1); }
 
 const vi = new VoiceIt3(apiKey, apiToken);
-const phrase = "never forget tomorrow is a new day";
+const phrase = "Never forget tomorrow is a new day";
 const td = path.join(__dirname, "test-data");
 let errors = 0;
 let step = 0;

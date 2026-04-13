@@ -576,7 +576,6 @@ function VoiceIt3(apk, tok, baseUrl) {
   this.faceVerificationByUrl = (options, callback) => {
     const form = new FormData();
     form.append('userId', options.userId);
-    form.append('userId', options.userId);
     form.append('fileUrl', options.videoFileURL);
 
     this.axiosInstance.post(`${BASE_URL}/verification/face/byUrl${this.notificationUrl}`, form, {
@@ -646,7 +645,6 @@ function VoiceIt3(apk, tok, baseUrl) {
     form.append('userId', options.userId);
     form.append('contentLanguage', options.contentLanguage);
     form.append('phrase', options.phrase ? options.phrase : '');
-    form.append('userId', options.userId);
     form.append('fileUrl', options.videoFileURL);
 
     this.axiosInstance.post(`${BASE_URL}/verification/video/byUrl${this.notificationUrl}`, form, {

@@ -1,4 +1,4 @@
-const VoiceIt3 = require('./index.js');
+const voiceit3 = require('./index.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,7 +6,7 @@ const apiKey = process.env.VOICEIT_API_KEY;
 const apiToken = process.env.VOICEIT_API_TOKEN;
 if (!apiKey || !apiToken) { console.log("Set VOICEIT_API_KEY and VOICEIT_API_TOKEN"); process.exit(1); }
 
-const vi = new VoiceIt3(apiKey, apiToken);
+const vi = new voiceit3(apiKey, apiToken);
 const phrase = "Never forget tomorrow is a new day";
 const td = path.join(__dirname, "test-data");
 let errors = 0;

@@ -12,7 +12,7 @@ function checkFileExists(filePath, callback) {
   return true;
 }
 
-function VoiceIt3(apk, tok, baseUrl) {
+function voiceit3(apk, tok, baseUrl) {
   this.baseUrl = baseUrl || 'https://api.voiceit.io';
 
   this.axiosInstance = axios.create({
@@ -846,4 +846,4 @@ function VoiceIt3(apk, tok, baseUrl) {
   };
 }
 
-module.exports = VoiceIt3;
+module.exports = voiceit3;

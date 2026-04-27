@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/voiceittech/voiceit3-nodejs/main/nodejs.png" width="100%" style="width:100%" />
 
-[![API Test](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml/badge.svg)](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml)
+[![API Test](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/voiceittech/voiceit3-nodejs/actions/workflows/test.yml)
 [![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-nodejs/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-nodejs/pulls?q=is%3Apr+label%3Adependencies)
 [![Version](https://img.shields.io/badge/version-3.0.4-blue)](https://github.com/voiceittech/voiceit3-nodejs)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/voiceit3-nodejs/blob/main/LICENSE)

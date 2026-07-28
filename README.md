@@ -10,6 +10,22 @@
 
 A NodeJS wrapper for VoiceIt's API 3.0 featuring Voice + Face Verification and Identification.
 
+## Features
+
+This SDK wraps the full VoiceIt API 3.0 surface:
+
+- **User management** — create, fetch, check existence, and delete users; list the groups a user belongs to
+- **Sub-account management** — create and manage sub-accounts under a parent account
+- **Group management** — create, fetch, check, and delete groups; add and remove users
+- **Voice, Face & Video enrollment** — enroll from a local file or a remote URL (including split-video)
+- **Voice, Face & Video verification** — 1:1 authentication from file or URL
+- **Voice & Video identification** — 1:N matching of a sample against everyone in a group
+- **Phrase management** — list the enrollment phrases available for a content language
+- **Notification webhooks** — register/remove callback URLs to receive asynchronous results
+- **Passive liveness & deepfake detection** — performed automatically by the API on face/video calls (API 3.0)
+
+See the [HTTP API 3.0 Documentation](https://voiceit.io/documentation) for per-call parameters and response codes.
+
 ## Installation
 
 This package is hosted on [GitHub Packages](https://github.com/orgs/voiceittech/packages). Add the registry to your `.npmrc`:
